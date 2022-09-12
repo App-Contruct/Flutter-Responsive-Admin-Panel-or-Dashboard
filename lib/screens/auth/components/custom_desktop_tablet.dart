@@ -5,12 +5,11 @@ import 'package:admin/core/widgets/custom_text_field/custom_text_field.dart';
 import 'package:admin/responsive.dart';
 import 'package:admin/screens/auth/components/custom_button_login.dart';
 import 'package:admin/screens/controllers/auth_controller.dart';
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:animate_do/animate_do.dart';
-import 'package:transparent_image/transparent_image.dart';
 
 class CustomDesktopTabletScreem extends StatefulWidget {
   const CustomDesktopTabletScreem({Key? key, required this.authController}) : super(key: key);
@@ -44,7 +43,7 @@ class _CustomDesktopTabletScreemState extends State<CustomDesktopTabletScreem>  
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          height: Responsive.isDesktop(context) ? 500 : 450,
+          height: Responsive.isDesktop(context) ? 500 : 460,
           width: Responsive.isDesktop(context) ? 450 : 400,
           decoration: BoxDecoration(
             image: DecorationImage(image: AssetImage('images/admin2.jpg'), fit: BoxFit.cover),
@@ -63,19 +62,18 @@ class _CustomDesktopTabletScreemState extends State<CustomDesktopTabletScreem>  
           ),
         ),
         Container(
-          height: Responsive.isDesktop(context) ? 500 : 450,
+          height: Responsive.isDesktop(context) ? 500 : 460,
           width: Responsive.isDesktop(context) ? 450 : 400,
           decoration: BoxDecoration(color: Colors.grey.shade50, borderRadius: BorderRadius.only(
                   topRight: Radius.circular(10), bottomRight: Radius.circular(10))),
           child: Column(
             children: [
-              const SizedBox(height: 25),
+              const SizedBox(height: 20),
               Container(
                 height: MediaQuery.of(context).size.height / 9,
                 width: MediaQuery.of(context).size.width / 15,
                 child: Lottie.asset('json/login2.json',
-                    width: 200,
-                    height: 170,
+                    width: 200, height: 170,
                     fit: BoxFit.fill,
                     controller: _controller, onLoaded: (composition) {
                       _controller..duration = composition.duration..forward();
@@ -86,31 +84,41 @@ class _CustomDesktopTabletScreemState extends State<CustomDesktopTabletScreem>  
                   FadeOut(
                     duration: Duration(seconds: 1),
                     child: Text(widget.authController.isLogin ? 'LOGIN' : 'CADASTRO',
-                      style: GoogleFonts.montserrat(fontSize: 18, color: secondaryColor,
+                      style: GoogleFonts.montserrat(fontSize: 16, color: secondaryColor,
                           fontWeight: FontWeight.bold)),),),
               Observer(builder: (_) => widget.authController.isLogin ?
               Text('Olá! Bem-vindo de volta!', style: GoogleFonts.montserrat(color: Colors.grey)
               ):Text('Vamos realizar seu cadastro!', style: GoogleFonts.montserrat(color: Colors.grey))),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
 
               ///Fields Inputs
               Observer(builder: (_) => widget.authController.isLogin ?
               Container() :
-              CustomTextField(
+              Observer(builder: (_) => CustomTextField(
                   hintText: 'Nome Completo',
                   prefixIcon: Icons.person,
-                  inputType: TextInputType.emailAddress)
-              ),
-              CustomTextField(
-                  hintText: 'Insirá seu e-mail',
-                  prefixIcon: Icons.email,
-                  inputType: TextInputType.emailAddress),
-              CustomTextField(
-                hintText: 'Insirá sua senha',
-                prefixIcon: Icons.lock,
-                inputType: TextInputType.emailAddress,
-                obscureText: true,
-              ),
+                  inputType: TextInputType.text,
+                errorText: widget.authController.nameError,
+                onChanged: widget.authController.setName,
+              )
+              )),
+              Observer(builder: (_) =>
+                  CustomTextField(
+                    hintText: 'Insirá seu e-mail',
+                    prefixIcon: Icons.email,
+                    inputType: TextInputType.emailAddress,
+                    errorText: widget.authController.emailError,
+                    onChanged: widget.authController.setEmail,
+                  )),
+              Observer(builder: (_) =>
+                  CustomTextField(
+                    hintText: 'Insirá sua senha',
+                    prefixIcon: Icons.lock,
+                    inputType: TextInputType.text,
+                    errorText: widget.authController.passwordError,
+                    onChanged: widget.authController.setPassword,
+                    obscureText: true,
+                  )),
 
               Observer(builder: (_) =>  widget.authController.isLogin ?
               const SizedBox(height: 10,) : Container()),
@@ -140,10 +148,7 @@ class _CustomDesktopTabletScreemState extends State<CustomDesktopTabletScreem>  
               Observer(builder: (_) =>
                   CustomButtonLogin(
                     onPressed: () async {
-                      final _dialog = CustomDialog.instance(context: context, message: 'Loading!');
-                      CustomDialog.show(dialog: _dialog);
-                      await Future.delayed(Duration(seconds: 3));
-                      CustomDialog.dismiss(dialog: _dialog);
+                      await widget.authController.login(context);
                     },
                     color: Colors.blue,
                     title: widget.authController.isLogin ? 'Login' : 'Registrar',)),
@@ -164,7 +169,7 @@ class _CustomDesktopTabletScreemState extends State<CustomDesktopTabletScreem>  
                           widget.authController.setIsLogin();
                         },
                         child: Container(
-                          margin: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                          margin: EdgeInsets.symmetric(vertical: 3, horizontal: 3),
                           child: Observer(builder: (_) =>
                               Text(widget.authController.isLogin ? 'Registrar' : 'Login',
                             style: TextStyle(color: bgColor, fontWeight: FontWeight.bold),),)

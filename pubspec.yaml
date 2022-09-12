@@ -37,8 +37,13 @@ dependencies:
   animate_do: ^2.1.0
   flutter_mobx: any
   mobx: any
-  transparent_image: any
   ndialog: ^4.1.1+1
+  flutterfire_ui: ^0.2.0+2
+  firebase_auth: any
+  firebase_storage: any
+  cloud_firestore: any
+  firebase_core: any
+  flutter_dotenv: ^5.0.2
 
 dev_dependencies:
   build_runner: any
@@ -61,6 +66,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/json/
+    - .env
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

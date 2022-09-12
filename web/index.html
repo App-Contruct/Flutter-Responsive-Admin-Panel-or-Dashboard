@@ -49,6 +49,8 @@
 
 <body style="overflow: hidden">
   <!-- Loading Indicator -->
+  <!--Firebase Configuration-->
+
   <div id="loading_container" class="container">
     <img src="./assets/loading.gif" alt="loading indicator" class="indicator">
   </div>
@@ -73,6 +75,27 @@
         }
       }, 10000)
     }
+  </script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBa-IywShVn_XlSst6IBJZARYe4ycMiFGs",
+      authDomain: "hobby-257f5.firebaseapp.com",
+      projectId: "hobby-257f5",
+      storageBucket: "hobby-257f5.appspot.com",
+      messagingSenderId: "217019665788",
+      appId: "1:217019665788:web:17d5b589f86b7d860268f9",
+      measurementId: "G-6GR5R48MX9"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
   </script>
 </body>
 

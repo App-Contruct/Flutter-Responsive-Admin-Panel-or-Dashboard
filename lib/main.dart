@@ -1,11 +1,25 @@
 import 'package:admin/constants.dart';
 import 'package:admin/controllers/MenuController.dart';
 import 'package:admin/screens/auth/auth_screem.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+Future<void> main() async {
+  await dotenv.load(fileName: '.env');
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: FirebaseOptions(
+      apiKey: dotenv.env['firebase_apiKey']!,
+      appId: dotenv.env['firebase_appId']!,
+      messagingSenderId: dotenv.env['firebase_messagingSenderId']!,
+      projectId: dotenv.env['firebase_projectId']!,
+      authDomain: dotenv.env['firebase_authDomain']!,
+      measurementId: dotenv.env['firebase_measurementId']!,
+    ),
+  );
   runApp(MyApp());
 }
 
