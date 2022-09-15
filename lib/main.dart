@@ -1,4 +1,4 @@
-import 'package:admin/constants.dart';
+import 'package:admin/utils/constants.dart';
 import 'package:admin/controllers/MenuController.dart';
 import 'package:admin/screens/auth/auth_screem.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -8,8 +8,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 Future<void> main() async {
-  await dotenv.load(fileName: '.env');
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: '.env');
   await Firebase.initializeApp(
     options: FirebaseOptions(
       apiKey: dotenv.env['firebase_apiKey']!,
@@ -24,7 +24,6 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,14 +35,7 @@ class MyApp extends StatelessWidget {
             .apply(bodyColor: Colors.white),
         canvasColor: secondaryColor,
       ),
-      home: MultiProvider(
-        providers: [
-          ChangeNotifierProvider(
-            create: (context) => MenuController(),
-          ),
-        ],
-        child: AuthScreen(),
-      ),
+      home: AuthScreen(),
     );
   }
 }

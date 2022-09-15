@@ -31,14 +31,13 @@ dependencies:
   google_fonts: ^2.1.0
   flutter_svg: ^0.22.0
   fl_chart: ^0.36.1
-  provider: ^5.0.0
-  data_table_2: ^2.0.3
-  lottie: ^1.4.2
-  animate_do: ^2.1.0
+  provider: any
+  data_table_2: any
+  lottie: any
+  animate_do: any
   flutter_mobx: any
   mobx: any
-  ndialog: ^4.1.1+1
-  flutterfire_ui: ^0.2.0+2
+  ndialog: any
   firebase_auth: any
   firebase_storage: any
   cloud_firestore: any

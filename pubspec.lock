@@ -204,13 +204,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.3.7"
-  desktop_webview_auth:
-    dependency: transitive
-    description:
-      name: desktop_webview_auth
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.0.9"
   equatable:
     dependency: transitive
     description:
@@ -281,41 +274,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.7.2"
-  firebase_database:
-    dependency: transitive
-    description:
-      name: firebase_database
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "9.1.4"
-  firebase_database_platform_interface:
-    dependency: transitive
-    description:
-      name: firebase_database_platform_interface
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.2.2+4"
-  firebase_database_web:
-    dependency: transitive
-    description:
-      name: firebase_database_web
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.2.1+6"
-  firebase_dynamic_links:
-    dependency: transitive
-    description:
-      name: firebase_dynamic_links
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "4.3.7"
-  firebase_dynamic_links_platform_interface:
-    dependency: transitive
-    description:
-      name: firebase_dynamic_links_platform_interface
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.2.3+12"
   firebase_storage:
     dependency: "direct main"
     description:
@@ -363,32 +321,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "5.0.2"
-  flutter_facebook_auth:
-    dependency: transitive
-    description:
-      name: flutter_facebook_auth
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "3.5.7"
-  flutter_facebook_auth_platform_interface:
-    dependency: transitive
-    description:
-      name: flutter_facebook_auth_platform_interface
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "2.7.1"
-  flutter_facebook_auth_web:
-    dependency: transitive
-    description:
-      name: flutter_facebook_auth_web
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "2.6.0+2"
-  flutter_localizations:
-    dependency: transitive
-    description: flutter
-    source: sdk
-    version: "0.0.0"
   flutter_mobx:
     dependency: "direct main"
     description:
@@ -413,13 +345,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutterfire_ui:
-    dependency: "direct main"
-    description:
-      name: flutterfire_ui
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.2.0+2"
   frontend_server_client:
     dependency: transitive
     description:
@@ -441,41 +366,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.3.3"
-  google_sign_in:
-    dependency: transitive
-    description:
-      name: google_sign_in
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "5.4.1"
-  google_sign_in_android:
-    dependency: transitive
-    description:
-      name: google_sign_in_android
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "6.1.0"
-  google_sign_in_ios:
-    dependency: transitive
-    description:
-      name: google_sign_in_ios
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "5.5.0"
-  google_sign_in_platform_interface:
-    dependency: transitive
-    description:
-      name: google_sign_in_platform_interface
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "2.3.0"
-  google_sign_in_web:
-    dependency: transitive
-    description:
-      name: google_sign_in_web
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.10.2"
   graphs:
     dependency: transitive
     description:
@@ -742,13 +632,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.2.1"
-  quiver:
-    dependency: transitive
-    description:
-      name: quiver
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "3.1.0"
   shelf:
     dependency: transitive
     description:
@@ -763,27 +646,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.2"
-  sign_in_with_apple:
-    dependency: transitive
-    description:
-      name: sign_in_with_apple
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "3.3.0"
-  sign_in_with_apple_platform_interface:
-    dependency: transitive
-    description:
-      name: sign_in_with_apple_platform_interface
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.0.0"
-  sign_in_with_apple_web:
-    dependency: transitive
-    description:
-      name: sign_in_with_apple_web
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.0.1"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -852,13 +714,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.0"
-  twitter_login:
-    dependency: transitive
-    description:
-      name: twitter_login
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "4.2.3"
   typed_data:
     dependency: transitive
     description:

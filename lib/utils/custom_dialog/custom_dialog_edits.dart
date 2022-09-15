@@ -1,4 +1,4 @@
-import 'package:admin/constants.dart';
+import 'package:admin/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';

@@ -16,7 +16,7 @@ class CustomButtonLogin extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(
-          horizontal: 40, vertical: MediaQuery.of(context).size.height / 75),
+          horizontal: 80, vertical: MediaQuery.of(context).size.height / 60),
       width: double.infinity,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
@@ -24,12 +24,11 @@ class CustomButtonLogin extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5),
           ),
-          padding: const EdgeInsets.symmetric(vertical: 5),
         ),
         onPressed: onPressed,
         child: Text(
           title.toUpperCase(),
-          style: const TextStyle(fontSize: 16),
+          style: const TextStyle(fontSize: 14),
         ),
       ),
     );
